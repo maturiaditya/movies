@@ -1,0 +1,148 @@
+/* YOUR CUSTOM STYLES */
+
+.card-text-max-lines {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    /* number of lines to show */
+    line-height: X;
+    /* fallback */
+    max-height: X*N;
+    /* fallback */
+}
+
+.pagination-fixed {
+    position: fixed;
+    right: 1%;
+    bottom: 1%;
+    z-index: 10;
+    /*background-color: rgba(204, 204, 0, 0.5);*/
+}
+
+.cellpadding {
+    padding: 5px 5px 5px 5px;
+}
+
+.fixed-header-menu {
+    position: fixed;
+    top: 1%;
+    right: 1%;
+    /* background-color: rgba(204, 204, 0, 0.5);*/
+    z-index: 10;
+}
+
+.card-block-custom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    width: 100%;
+    text-align: center;
+}
+
+.card-block-custom p.card-text {
+    margin-bottom: 5px;
+}
+
+.card-block-custom h4.card-title {
+    font-size: 18px;
+    margin-top: 0.5em;
+    margin-bottom: 0em;
+}
+
+.search-container{
+    position: fixed;
+    padding: 53px 30px 0px 30px;
+    width: 100%;
+    z-index: 10;
+}
+
+@media (min-width: 544px) .card-columns .card-custom {
+    display: inline-block;
+    width: 100%;
+}
+
+.card-custom {
+    border: 0;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+}
+
+.card-custom {
+    position: relative;
+    display: block;
+    margin-bottom: .75rem;
+    background-color: #fff;
+    border-radius: .125rem;
+    border: 1px solid rgba(0, 0, 0, .12);
+}
+
+.card-custom {
+    font-size: .875rem;
+    font-weight: 400;
+}
+
+.bg-transparantblack {
+    color: rgba(0, 0, 0, 0.8);
+}
+
+@media (min-width:320px) {
+    /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
+    .card-columns {
+        -webkit-column-count: 1;
+        -moz-column-count: 1;
+        column-count: 1;
+    }
+}
+
+@media (min-width:593px) {
+    /* smartphones, Android phones, landscape iPhone */
+    /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
+    .card-columns {
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        column-count: 2;
+    }
+}
+
+@media (min-width:720px) {
+    /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */
+    /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
+    .card-columns {
+        -webkit-column-count: 3;
+        -moz-column-count: 3;
+        column-count: 3;
+    }
+}
+
+@media (min-width:801px) {
+    /* tablet, landscape iPad, lo-res laptops ands desktops */
+    /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
+    .card-columns {
+        -webkit-column-count: 4;
+        -moz-column-count: 4;
+        column-count: 4;
+    }
+}
+
+@media (min-width:1025px) {
+    /* big landscape tablets, laptops, and desktops */
+    /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
+    .card-columns {
+        -webkit-column-count: 5;
+        -moz-column-count: 5;
+        column-count: 5;
+    }
+}
+
+@media (min-width:1281px) {
+    /* hi-res laptops and desktops */
+    /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
+    .card-columns {
+        -webkit-column-count: 5;
+        -moz-column-count: 5;
+        column-count: 5
+    }
+}

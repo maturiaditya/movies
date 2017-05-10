@@ -1,0 +1,99 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <script src="js/constants.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <script src="js/libs/angular.min.js"></script>
+    <script src="js/libs/angular-route.js"></script>
+    <!-- sidebar CSS -->
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+    <!-- custom css-->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/votestars.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!--<link href="//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">-->
+    <!-- Material Design Bootstrap -->
+    <link href="css/mdb.min.css" rel="stylesheet">
+    <!-- Custom styles -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body ng-app="MoviesApp">
+    <div id="wrapper">
+        <!--Navbar-->
+        <nav class="navbar fixed-top navbar-toggleable-md navbar-dark red">
+            <div class="container">
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav1" aria-controls="navbarNav1" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+                <a class="navbar-brand">
+                    <strong>Movies</strong>
+                </a>
+                <div class="collapse navbar-collapse" id="navbarNav1">
+                    <ul class="navbar-nav mr-auto">
+                        <!--<li class="nav-item active">
+                            <a class="nav-link">Home <span class="sr-only">(current)</span></a>
+                        </li>-->
+                        <li class="nav-item dropdown btn-group" ng-controller="MoviesListController">
+                            <a class="nav-link dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Movies</a>
+                            <div class="dropdown-menu dropdown" aria-labelledby="dropdownMenu1">
+                                <a class="dropdown-item" ng-repeat="panel in panels" ui-sref="{{panel.url}}">{{panel.title}}</a>
+
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown btn-group" ng-controller="TvShowsListController">
+                            <a class="nav-link dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">TV Shows</a>
+                            <div class="dropdown-menu dropdown" aria-labelledby="dropdownMenu1">
+                                <a class="dropdown-item" ng-repeat="panel in panels" ui-sref="{{panel.url}}">{{panel.title}}</a>
+                            </div>
+                        </li>
+                    </ul>
+                    <form class="form-inline waves-effect waves-light" ng-controller="SearchController">
+                        <input class="form-control" type="text" ng-model="searchinput" ng-change="getStringArray($viewvalue)" placeholder="Search">
+                    </form>
+                </div>
+            </div>
+        </nav>
+        
+        <!-- routing views-->
+        <div ui-view="searchview"></div>
+        <div ui-view="mainview" style="padding: 100px 100px 10px 100px;"></div>
+        <!--/routing views-->
+
+        <!-- SCRIPTS -->
+        <!-- JQuery -->
+        <script type="text/javascript" src="js/libs/jquery-3.1.1.min.js"></script>
+        <!-- Bootstrap tooltips -->
+        <script type="text/javascript" src="js/libs/tether.min.js"></script>
+        <!-- Bootstrap core JavaScript -->
+        <script type="text/javascript" src="js/libs/bootstrap.min.js"></script>
+        <!-- MDB core JavaScript -->
+        <script type="text/javascript" src="js/libs/mdb.min.js"></script>
+        <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.5.0.js"></script>
+        <!-- UI-Router -->
+        <script src="//angular-ui.github.io/ui-router/release/angular-ui-router.js"></script>
+
+        <!-- angular app-->
+        <script src="js/app.js"></script>
+
+        <!--andular services-->
+        <script src="js/services/movieservice.js"></script>
+
+        <!--andular controllers-->
+        <script src="js/controllers/sidepanelcontroller.js"></script>
+
+        <script src="js/controllers/moviescontroller.js"></script>
+        <script src="js/controllers/tvcontroller.js"></script>
+        <script src="js/controllers/searchcontroller.js"></script>
+        <!-- Extra Script-->
+        <script src="js/extra.js"></script>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+<div class="card-columns">
+    <!--Card-->
+    <div class="card" ng-repeat="movie in movies.data.results">
+        <center>
+            <!--Card image-->
+            <div class="view overlay hm-white-slight">
+                <img ng-src={{getimagePreUrl()+movie.poster_path}} alt={{movie.original_name}} class="img-fluid">
+                <a data-toggle="modal" data-target="#{{movie.id}}">
+                    <div class="mask waves-effect waves-light"></div>
+                </a>
+            </div>
+            <!--/.Card image-->
+
+            <!--Card content-->
+            <div class="card-block">
+                <!--Title-->
+                <!--<h4 class="card-title"><strong>{{movie.original_title}}</strong></h4>-->
+                <!--Text-->
+                <p class="card-text"><strong>{{movie.original_name}}</strong></p>
+                <div class="star-ratings-sprite"><span style="width:{{movie.popularity*10}}%" class="star-ratings-sprite-rating"></span></div>
+            </div>
+            <!--/.Card content-->
+        </center>
+    </div>
+    <!--/.Card-->
+</div>
+
+<nav class="pagination-fixed">
+    <ul class="pagination pg-dark">
+        <!--Arrow left-->
+        <li class="page-item active" ng-class="{disabled: movies.data.page=='1'}">
+            <a class="page-link" ui-sref="topratedtv({id: movies.data.page-1})" aria-label="Previous">
+                <span aria-hidden="true">&laquo; Previous</span>
+                <span class="sr-only">Previous</span>
+            </a>
+        </li>
+        <!--Arrow right-->
+        <li class="page-item active" ng-class="{disabled: page==movies.data.total_pages}">
+            <a class="page-link" ui-sref="topratedtv({id: movies.data.page+1})" aria-label="Next">
+                <span aria-hidden="true">Next &raquo;</span>
+                <span class="sr-only">Next</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+
+<!-- Modal -->
+<div id="{{movie.id}}" class="modal fade" role="dialog" ng-repeat="movie in movies.data.results">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <p class="lead"><strong>{{movie.original_name}}</strong></p>
+            </div>
+            <div class="modal-body" style="text-align:center">
+                <img class="card-img-top" ng-src={{getimagePreUrl()+movie.poster_path}} alt={{movie.original_title}}>
+                <br/><br/>
+                <div class="star-ratings-sprite"><span style="width:{{movie.popularity*10}}%" class="star-ratings-sprite-rating"></span></div>
+                <br/>
+                <p class="card-text"><em>{{movie.overview}}</em>
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
